@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://postcard.ulanelectronics.pl" target="_blank"><img src="http://ulanelectronics.pl/wp-content/uploads/2021/09/postcard.png" width="200"></a></p>
 
 <p align="center">
 <a href="https://github.com/on3n3o/postcard/actions/workflows/laravel.yml"><img src="https://github.com/on3n3o/postcard/actions/workflows/postcard.yml/badge.svg" alt="Build Status"></a>
