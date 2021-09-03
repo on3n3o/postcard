@@ -49,7 +49,7 @@ In order to ensure that the Postcard community is welcoming to all, please revie
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Postcard, please send an e-mail to Marcin Maciejewski via [marcin.maciejewski@ulanelectronics.com](mailto:marcin.maciejewski@ulanelectronics.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Postcard, please send an e-mail to Marcin Maciejewski via [marcin.maciejewski@ulanelectronics.pl](mailto:marcin.maciejewski@ulanelectronics.pl). All security vulnerabilities will be promptly addressed.
 
 ## License
 
