@@ -1,8 +1,8 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://github.com/on3n3o/postcard/actions/workflows/laravel.yml"><img src="https://github.com/on3n3o/postcard/actions/workflows/postcard.yml/badge.svg" alt="Build Status"></a>
+<img src="https://img.shields.io/packagist/l/laravel/framework" alt="License">
 </p>
 
 ## About Postcard

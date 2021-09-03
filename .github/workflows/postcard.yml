@@ -1,4 +1,4 @@
-name: Laravel
+name: Postcard frontend web email client
 
 on:
   push:
