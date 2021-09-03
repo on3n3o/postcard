@@ -7,7 +7,37 @@
 
 ## About Postcard
 
-Postcard is a frontend email web client based on Laravel and React. It provides service like Roundcube or Rainloop, with graphics similar to Google web mail client Gmail. 
+Postcard is a frontend email web client based on Laravel and React. It provides service like Roundcube or Rainloop, with graphics similar to Google web mail client Gmail.
+
+## Setup
+
+This setup requires to have installed docker and docker-compose and added docker user to sudoers group.
+
+
+```
+# clone repository and enter the directory
+git clone https://github.com/on3n3o/postcard.git
+cd postcard
+
+# install composer dependencies
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/opt \
+    -w /opt \
+    laravelsail/php80-composer:latest \
+    composer install --ignore-platform-reqs
+
+cp .env.example .env
+
+# run the application
+sail up
+
+# run this ONLY ONE TIME to generate security keys
+sail artisan key:generate
+
+# run this ONLY if you are setting up a demo project
+sail artisan migrate
+```
 
 ## Contributing
 
