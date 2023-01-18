@@ -3552,6 +3552,251 @@ function ResponsiveNavLink(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Components/SecondSideBar/EmailList.js":
+/*!************************************************************!*\
+  !*** ./resources/js/Components/SecondSideBar/EmailList.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EmailList)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _EmailPreviewItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EmailPreviewItem */ "./resources/js/Components/SecondSideBar/EmailPreviewItem.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+function EmailList(_ref) {
+  var emailList = _ref.emailList;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(emailList),
+      _useState2 = _slicedToArray(_useState, 2),
+      emailListing = _useState2[0],
+      setEmailList = _useState2[1];
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "h-full overflow-y-auto",
+    children: emailListing.map(function (emailPreview) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_EmailPreviewItem__WEBPACK_IMPORTED_MODULE_1__.default, {
+        onClick: function onClick() {
+          /** Add here onClick change state selected to true */
+          setEmailList([]);
+        },
+        emailPreview: emailPreview
+      }, emailPreview.id);
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/SecondSideBar/EmailPreviewItem.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/Components/SecondSideBar/EmailPreviewItem.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EmailPreviewItem)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function EmailPreviewItem(_ref) {
+  var emailPreview = _ref.emailPreview,
+      onClick = _ref.onClick;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "h-32 m-4 pt-4 rounded-lg cursor-pointer " + (emailPreview.selected ? "shadow-dark-lg" : "shadow-inner"),
+    onClick: onClick,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "w-full h-16 flex items-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "w-1 h-6 bg-green-500 rounded"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        className: "w-14 h-14 rounded-full m-2 p-2",
+        src: emailPreview.sender_avatar
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "text-white font-bold",
+          children: emailPreview.sender
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "text-gray-400 font-semibold tracking-tight",
+          children: emailPreview.title
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "text-xs tracking-tighter leading-none pl-4",
+        children: emailPreview.text_preview
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/SecondSideBar/SearchBar.js":
+/*!************************************************************!*\
+  !*** ./resources/js/Components/SecondSideBar/SearchBar.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SearchBar)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function SearchBar() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "pt-4 px-4 pb-4",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_1__.default, {
+      name: "search",
+      className: "mt-1 block w-full text-gray-500 dark:text-white dark:placeholder-gray-300 dark:bg-gray-900 dark:border-gray-800",
+      placeholder: "Search",
+      icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        className: "text-gray-800 absolute inset-y-0 left-0 flex items-center pl-2",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+          fill: "none",
+          stroke: "currentColor",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          strokeWidth: "2",
+          viewBox: "0 0 24 24",
+          className: "w-6 h-6",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+            d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          })
+        })
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/SecondSideBar/SearchOptions.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/Components/SecondSideBar/SearchOptions.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SearchOptions)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function SearchOptions() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "h-16 flex items-center px-4",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "pr-8",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+        className: "far fa-lg fa-check-square"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "pr-8",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+        className: "fas fa-lg fa-redo"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "pr-8",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+        className: "fas fa-lg fa-ellipsis-v"
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/SecondSideBar/SecondSideBar.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/Components/SecondSideBar/SecondSideBar.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SecondSideBar)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _EmailList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EmailList */ "./resources/js/Components/SecondSideBar/EmailList.js");
+/* harmony import */ var _SearchBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchBar */ "./resources/js/Components/SecondSideBar/SearchBar.js");
+/* harmony import */ var _SearchOptions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SearchOptions */ "./resources/js/Components/SecondSideBar/SearchOptions.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function SecondSideBar() {
+  var emailList = [{
+    id: 1,
+    selected: false,
+    sender: "Test",
+    sender_avatar: "https://avatars.githubusercontent.com/u/8138489?v=4",
+    title: "Design iteration for project X",
+    group: "social",
+    has_attachments: false,
+    received_at: "now",
+    text_preview: "Lorem ipsum dolor sit amet, consectetur adipiscing \
+                           elit. Morbi non convallis arcu, in varius odio. Nunc \
+                           fermentum dolor ut vestibulum ultricies."
+  }, {
+    id: 2,
+    selected: true,
+    sender: "Marcin Maciejewski",
+    sender_avatar: "https://avatars.githubusercontent.com/u/8138489?v=4",
+    title: "Design iteration for project X",
+    group: "social",
+    has_attachments: false,
+    received_at: "now",
+    text_preview: "Lorem ipsum dolor sit amet, consectetur adipiscing \
+                           elit. Morbi non convallis arcu, in varius odio. Nunc \
+                           fermentum dolor ut vestibulum ultricies."
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "bg-white-200 dark:bg-gray-900 dark:text-gray-500 box-content min-h-screen w-400px flex flex-col flex-shrink-0",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SearchBar__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SearchOptions__WEBPACK_IMPORTED_MODULE_3__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_EmailList__WEBPACK_IMPORTED_MODULE_1__.default, {
+      emailList: emailList
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Components/SideBar/ComposeButton.js":
 /*!**********************************************************!*\
   !*** ./resources/js/Components/SideBar/ComposeButton.js ***!
@@ -4603,238 +4848,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Dashboard)
 /* harmony export */ });
 /* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
-/* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.js");
+/* harmony import */ var _Components_SecondSideBar_SecondSideBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/SecondSideBar/SecondSideBar */ "./resources/js/Components/SecondSideBar/SecondSideBar.js");
+/* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
-
 function Dashboard(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_1__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__.default, {
     auth: props.auth,
-    errors: props.errors // header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
-    ,
-    sideContent: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "bg-white-200 dark:bg-gray-900 dark:text-gray-500 box-content min-h-screen w-400px flex flex-col flex-shrink-0",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "pt-4 px-4 pb-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_3__.default, {
-          name: "search",
-          className: "mt-1 block w-full text-gray-500 dark:text-white dark:placeholder-gray-300 dark:bg-gray-900 dark:border-gray-800",
-          placeholder: "Search",
-          icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "text-gray-800 absolute inset-y-0 left-0 flex items-center pl-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
-              fill: "none",
-              stroke: "currentColor",
-              strokeLinecap: "round",
-              strokeLinejoin: "round",
-              strokeWidth: "2",
-              viewBox: "0 0 24 24",
-              className: "w-6 h-6",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
-                d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              })
-            })
-          })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "h-16 flex items-center px-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "pr-8",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-            className: "far fa-lg fa-check-square"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "pr-8",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-            className: "fas fa-lg fa-redo"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "pr-8",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-            className: "fas fa-lg fa-ellipsis-v"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "h-full overflow-y-auto",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "h-32 m-4 pt-4 rounded-lg shadow-dark-lg",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full h-16 flex items-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "w-1 h-6 bg-green-500 rounded"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              className: "w-14 h-14 rounded-full m-2 p-2",
-              src: "https://avatars.githubusercontent.com/u/8138489?v=4"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-white font-bold",
-                children: "Marcin Maciejewski"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-gray-400 font-semibold tracking-tight",
-                children: "Design iteration for project X"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-              className: "text-xs tracking-tighter leading-none pl-4",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non convallis arcu, in varius odio. Nunc fermentum dolor ut vestibulum ultricies."
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "h-32 m-4 pt-4 rounded-lg shadow-inner",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full h-16 flex items-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "w-1 h-6 bg-red-500 rounded"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              className: "w-14 h-14 rounded-full m-2 p-2",
-              src: "https://avatars.githubusercontent.com/u/8138489?v=4"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-white font-bold",
-                children: "Marcin Maciejewski"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-gray-400 font-semibold tracking-tight",
-                children: "Design iteration for project X"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-              className: "text-xs tracking-tighter leading-none pl-4",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non convallis arcu, in varius odio. Nunc fermentum dolor ut vestibulum ultricies."
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "h-32 m-4 pt-4 rounded-lg shadow-dark-lg"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "h-32 m-4 pt-4 rounded-lg shadow-inner",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full h-16 flex items-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "w-1 h-6 bg-purple-500 rounded"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              className: "w-14 h-14 rounded-full m-2 p-2",
-              src: "https://avatars.githubusercontent.com/u/8138489?v=4"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-white font-bold",
-                children: "Marcin Maciejewski"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-gray-400 font-semibold tracking-tight",
-                children: "Design iteration for project X"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-              className: "text-xs tracking-tighter leading-none pl-4",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non convallis arcu, in varius odio. Nunc fermentum dolor ut vestibulum ultricies."
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "h-32 m-4 pt-4 rounded-lg shadow-inner",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full h-16 flex items-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "w-1 h-6 bg-green-500 rounded"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              className: "w-14 h-14 rounded-full m-2 p-2",
-              src: "https://avatars.githubusercontent.com/u/8138489?v=4"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-white font-bold",
-                children: "Marcin Maciejewski"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-gray-400 font-semibold tracking-tight",
-                children: "Design iteration for project X"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-              className: "text-xs tracking-tighter leading-none pl-4",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non convallis arcu, in varius odio. Nunc fermentum dolor ut vestibulum ultricies."
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "h-32 m-4 pt-4 rounded-lg shadow-inner",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full h-16 flex items-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "w-1 h-6 bg-green-500 rounded"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              className: "w-14 h-14 rounded-full m-2 p-2",
-              src: "https://avatars.githubusercontent.com/u/8138489?v=4"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-white font-bold",
-                children: "Marcin Maciejewski"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-gray-400 font-semibold tracking-tight",
-                children: "Design iteration for project X"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-              className: "text-xs tracking-tighter leading-none pl-4",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non convallis arcu, in varius odio. Nunc fermentum dolor ut vestibulum ultricies."
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "h-32 m-4 pt-4 rounded-lg shadow-inner",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full h-16 flex items-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "w-1 h-6 bg-green-500 rounded"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              className: "w-14 h-14 rounded-full m-2 p-2",
-              src: "https://avatars.githubusercontent.com/u/8138489?v=4"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-white font-bold",
-                children: "Marcin Maciejewski"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-gray-400 font-semibold tracking-tight",
-                children: "Design iteration for project X"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-              className: "text-xs tracking-tighter leading-none pl-4",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non convallis arcu, in varius odio. Nunc fermentum dolor ut vestibulum ultricies."
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "h-32 m-4 pt-4 rounded-lg shadow-inner",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            className: "w-full h-16 flex items-center",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "w-1 h-6 bg-green-500 rounded"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              className: "w-14 h-14 rounded-full m-2 p-2",
-              src: "https://avatars.githubusercontent.com/u/8138489?v=4"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-white font-bold",
-                children: "Marcin Maciejewski"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                className: "text-gray-400 font-semibold tracking-tight",
-                children: "Design iteration for project X"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-              className: "text-xs tracking-tighter leading-none pl-4",
-              children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non convallis arcu, in varius odio. Nunc fermentum dolor ut vestibulum ultricies."
-            })
-          })]
-        })]
-      })]
-    }),
+    errors: props.errors,
+    sideContent: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_SecondSideBar_SecondSideBar__WEBPACK_IMPORTED_MODULE_1__.default, {}),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "py-12",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
